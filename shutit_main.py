@@ -651,7 +651,9 @@ def main():
 	# Mark the build as completed
 	shutit.build['completed'] = True
 	shutit.log('ShutIt run finished',level=logging.INFO)
+	print '1'
 	shutit_util.handle_exit(0)
+	print '2'
 
 
 def do_phone_home(msg=None,question='Error seen - would you like to inform the maintainers?'):
