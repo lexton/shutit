@@ -2386,10 +2386,8 @@ def allowed_image(module_id):
 
 
 def handle_exit(shutit=None,exit_code=0,loglevel=logging.DEBUG,msg=None):
-	shutit.log('3',level=logging.CRITICAL)
 	if not msg:
 		msg = '\nExiting with error code: ' + str(exit_code)
-	shutit.log('4',level=logging.CRITICAL)
 	if not shutit:
 		if exit_code != 0:
 			#print_stack_trace()
@@ -2397,15 +2395,14 @@ def handle_exit(shutit=None,exit_code=0,loglevel=logging.DEBUG,msg=None):
 			print 'Resetting terminal'
 	else:
 		if exit_code != 0:
-			shutit.log('5',level=logging.CRITICAL)
-			shutit.log('Exiting with error code: ' + str(exit_code),level=loglevel)
-			shutit.log('6',level=logging.CRITICAL)
-			shutit.log('Resetting terminal',level=loglevel)
-	shutit.log('7',level=logging.CRITICAL)
+			if shutit:
+				shutit.log('Exiting with error code: ' + str(exit_code),level=loglevel)
+				shutit.log('Resetting terminal',level=loglevel)
+			else:
+				print 'Exiting with error code: ' + str(exit_code)
+				print 'Resetting terminal'
 	sanitize_terminal()
-	shutit.log('8',level=logging.CRITICAL)
 	sys.exit(exit_code)
-	shutit.log('9',level=logging.CRITICAL)
 
 
 def sendline(child,
