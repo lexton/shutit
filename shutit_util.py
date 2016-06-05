@@ -2395,12 +2395,8 @@ def handle_exit(shutit=None,exit_code=0,loglevel=logging.DEBUG,msg=None):
 			print 'Resetting terminal'
 	else:
 		if exit_code != 0:
-			if shutit:
-				shutit.log('Exiting with error code: ' + str(exit_code),level=loglevel)
-				shutit.log('Resetting terminal',level=loglevel)
-			else:
-				print 'Exiting with error code: ' + str(exit_code)
-				print 'Resetting terminal'
+			shutit.log('Exiting with error code: ' + str(exit_code),level=loglevel)
+			shutit.log('Resetting terminal',level=loglevel)
 	sanitize_terminal()
 	sys.exit(exit_code)
 

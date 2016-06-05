@@ -652,7 +652,7 @@ def main():
 	shutit.build['completed'] = True
 	shutit.log('ShutIt run finished',level=logging.INFO)
 	print '1'
-	shutit_util.handle_exit(0)
+	#shutit_util.handle_exit(0)
 	print '2'
 
 
