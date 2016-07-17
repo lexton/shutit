@@ -1770,8 +1770,6 @@ net:
 '''
 
 _build_section = '''
-
-	def build(self, shutit):
 		# Some useful API calls for reference. See shutit's docs for more info and options:
 		#
 		# ISSUING BASH COMMANDS
